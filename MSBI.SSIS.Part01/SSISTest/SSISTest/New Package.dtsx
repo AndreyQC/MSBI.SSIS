@@ -1,0 +1,971 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/27/2020 10:41:36 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="EPRUSARW1710"
+  DTS:CreatorName="SARATOV\Andrey_Potapov"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{2EED3E28-B5A3-4E6B-B82B-C57BB81616B2}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1900.80"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="New Package"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{049E3902-6DE3-41B3-A6A6-EEB568602F73}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSVMarket]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{09D2A841-4B7F-4B07-B429-D625B5D72125}"
+      DTS:ObjectName="CSVMarket">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:Unicode="True"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\-=dump=-\MSBI\DimMArket.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DimMarketKey"
+              DTS:DTSID="{ED5F7A88-F5E8-478B-944E-848381616D4D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MarketName"
+              DTS:DTSID="{BC807310-2173-4235-AB29-0809DF44092C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RegionName"
+              DTS:DTSID="{EFFCE1D2-4F5C-46D4-80A4-F3296DC280AE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TagJson"
+              DTS:DTSID="{C16D3624-3A36-469E-824B-62509D2EE4AE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="131"
+              DTS:DataPrecision="3"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Weight"
+              DTS:DTSID="{509C3D1D-FA28-44EB-A9B1-BCE0BBD41728}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{AF9E013E-0D4D-4668-8EF8-A24F03765558}"
+      DTS:ObjectName="DestinationConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:Unicode="True"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\-=dump=-\MSBI\test2.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="11"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DimEpicKey"
+              DTS:DTSID="{6E474DB9-61F1-4598-AAF4-4E60AED290F3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EpicName"
+              DTS:DTSID="{97EC93AA-FA65-480F-B8D2-7C615E294AF9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="-1"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TagJson"
+              DTS:DTSID="{0384939C-6123-466D-AAA7-5C05CE115B04}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="sysCreatedAt"
+              DTS:DTSID="{EC6CBD7D-0B85-4A10-B076-74CB8B346A9C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="sysChangedAt"
+              DTS:DTSID="{4D082A33-75AD-4AA7-B8D5-D1B1E287C0EE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="11"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="sysCreatedBy"
+              DTS:DTSID="{8709F7A1-E6EA-4485-8932-A76B903FECD7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="11"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="sysChangedBy"
+              DTS:DTSID="{BCAE7EE6-A414-4B67-8EBD-2E11A6EE294D}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A9AC8FD5-72CE-4302-8D58-E955FC5DC820}"
+      DTS:ObjectName="SourceConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=andreypotapov.database.windows.net;User ID=Andrey_Potapov;Initial Catalog=MSBIAzure;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=false;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAC+vl9xVAY0ySRUPt8TvkUQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAHaRO54+YFBv/rvJH3TiHMAAAAAASAAACgAAAAEAAAABK+8f8YiPEDHW3xkO//KPwYAAAAjaQSk1bnNYnoGwoSqBxDZ88CkCYOCKvrFAAAAMg32LQu/AwlBdoppSRdJpy+892L</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DTSID="{238398FC-2C59-47C7-BD2C-4C58295375F0}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Destination - test2_csv"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Destination - test2_csv">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - test2_csv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - test2_csv.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - test2_csv.Inputs[Flat File Destination Input].Columns[DimEpicKey]"
+                      cachedDataType="i4"
+                      cachedName="DimEpicKey"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - test2_csv.Inputs[Flat File Destination Input].ExternalColumns[DimEpicKey]"
+                      lineageId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].Columns[DimEpicKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - test2_csv.Inputs[Flat File Destination Input].Columns[EpicName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EpicName"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - test2_csv.Inputs[Flat File Destination Input].ExternalColumns[EpicName]"
+                      lineageId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].Columns[EpicName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - test2_csv.Inputs[Flat File Destination Input].Columns[TagJson]"
+                      cachedDataType="nText"
+                      cachedName="TagJson"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - test2_csv.Inputs[Flat File Destination Input].ExternalColumns[TagJson]"
+                      lineageId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].Columns[TagJson]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - test2_csv.Inputs[Flat File Destination Input].Columns[sysCreatedAt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="sysCreatedAt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - test2_csv.Inputs[Flat File Destination Input].ExternalColumns[sysCreatedAt]"
+                      lineageId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].Columns[sysCreatedAt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - test2_csv.Inputs[Flat File Destination Input].Columns[sysChangedAt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="sysChangedAt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - test2_csv.Inputs[Flat File Destination Input].ExternalColumns[sysChangedAt]"
+                      lineageId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].Columns[sysChangedAt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - test2_csv.Inputs[Flat File Destination Input].Columns[sysCreatedBy]"
+                      cachedDataType="i4"
+                      cachedName="sysCreatedBy"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - test2_csv.Inputs[Flat File Destination Input].ExternalColumns[sysCreatedBy]"
+                      lineageId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].Columns[sysCreatedBy]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - test2_csv.Inputs[Flat File Destination Input].Columns[sysChangedBy]"
+                      cachedDataType="i4"
+                      cachedName="sysChangedBy"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - test2_csv.Inputs[Flat File Destination Input].ExternalColumns[sysChangedBy]"
+                      lineageId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].Columns[sysChangedBy]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - test2_csv.Inputs[Flat File Destination Input].ExternalColumns[DimEpicKey]"
+                      dataType="i4"
+                      name="DimEpicKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - test2_csv.Inputs[Flat File Destination Input].ExternalColumns[EpicName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EpicName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - test2_csv.Inputs[Flat File Destination Input].ExternalColumns[TagJson]"
+                      dataType="wstr"
+                      length="-1"
+                      name="TagJson" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - test2_csv.Inputs[Flat File Destination Input].ExternalColumns[sysCreatedAt]"
+                      dataType="dbTimeStamp"
+                      name="sysCreatedAt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - test2_csv.Inputs[Flat File Destination Input].ExternalColumns[sysChangedAt]"
+                      dataType="dbTimeStamp"
+                      name="sysChangedAt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - test2_csv.Inputs[Flat File Destination Input].ExternalColumns[sysCreatedBy]"
+                      dataType="i4"
+                      name="sysCreatedBy" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - test2_csv.Inputs[Flat File Destination Input].ExternalColumns[sysChangedBy]"
+                      dataType="i4"
+                      name="sysChangedBy" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Flat File Destination">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CSVMarket]"
+                  connectionManagerRefId="Package.ConnectionManagers[CSVMarket]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Flat File Destination.Inputs[Flat File Destination Input].Columns[DimMarketKey]"
+                      cachedDataType="i4"
+                      cachedName="DimMarketKey"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[DimMarketKey]"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimMarketKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Flat File Destination.Inputs[Flat File Destination Input].Columns[TagJson]"
+                      cachedDataType="nText"
+                      cachedName="TagJson"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[TagJson]"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[TagJson]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Flat File Destination.Inputs[Flat File Destination Input].Columns[Weight]"
+                      cachedDataType="numeric"
+                      cachedName="Weight"
+                      cachedPrecision="3"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Weight]"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Weight]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Flat File Destination.Inputs[Flat File Destination Input].Columns[RegionName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="RegionName"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[RegionName]"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[RegionName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Flat File Destination.Inputs[Flat File Destination Input].Columns[MarketName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="MarketName"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[MarketName]"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[MarketName]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[DimMarketKey]"
+                      dataType="i4"
+                      name="DimMarketKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[MarketName]"
+                      dataType="wstr"
+                      length="255"
+                      name="MarketName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[RegionName]"
+                      dataType="wstr"
+                      length="255"
+                      name="RegionName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[TagJson]"
+                      dataType="nText"
+                      name="TagJson" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Weight]"
+                      dataType="numeric"
+                      name="Weight"
+                      precision="3"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimMarket]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimMarketKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DimMarketKey]"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimMarketKey]"
+                      name="DimMarketKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[MarketName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MarketName]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[MarketName]"
+                      name="MarketName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[RegionName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RegionName]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[RegionName]"
+                      name="RegionName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[TagJson]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TagJson]"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[TagJson]"
+                      name="TagJson"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Weight]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Weight]"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Weight]"
+                      name="Weight"
+                      precision="3"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DimMarketKey]"
+                      dataType="i4"
+                      name="DimMarketKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MarketName]"
+                      dataType="wstr"
+                      length="255"
+                      name="MarketName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RegionName]"
+                      dataType="wstr"
+                      length="255"
+                      name="RegionName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TagJson]"
+                      dataType="nText"
+                      name="TagJson" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Weight]"
+                      dataType="numeric"
+                      name="Weight"
+                      precision="3"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[sysCreatedAt]"
+                      dataType="dbTimeStamp"
+                      name="sysCreatedAt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[sysChangedAt]"
+                      dataType="dbTimeStamp"
+                      name="sysChangedAt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[sysCreatedBy]"
+                      dataType="i4"
+                      name="sysCreatedBy" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[sysChangedBy]"
+                      dataType="i4"
+                      name="sysChangedBy" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DimMarketKey]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DimMarketKey]"
+                      name="DimMarketKey" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MarketName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MarketName]"
+                      name="MarketName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RegionName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RegionName]"
+                      name="RegionName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TagJson]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TagJson]"
+                      name="TagJson" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Weight]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Weight]"
+                      name="Weight"
+                      precision="3"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - DimEpic"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Source - DimEpic"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimEpic]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - DimEpic.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].Columns[DimEpicKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].ExternalColumns[DimEpicKey]"
+                      lineageId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].Columns[DimEpicKey]"
+                      name="DimEpicKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].Columns[EpicName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].ExternalColumns[EpicName]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].Columns[EpicName]"
+                      name="EpicName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].Columns[TagJson]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].ExternalColumns[TagJson]"
+                      lineageId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].Columns[TagJson]"
+                      name="TagJson"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].Columns[sysCreatedAt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].ExternalColumns[sysCreatedAt]"
+                      lineageId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].Columns[sysCreatedAt]"
+                      name="sysCreatedAt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].Columns[sysChangedAt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].ExternalColumns[sysChangedAt]"
+                      lineageId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].Columns[sysChangedAt]"
+                      name="sysChangedAt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].Columns[sysCreatedBy]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].ExternalColumns[sysCreatedBy]"
+                      lineageId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].Columns[sysCreatedBy]"
+                      name="sysCreatedBy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].Columns[sysChangedBy]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].ExternalColumns[sysChangedBy]"
+                      lineageId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].Columns[sysChangedBy]"
+                      name="sysChangedBy"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].ExternalColumns[DimEpicKey]"
+                      dataType="i4"
+                      name="DimEpicKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].ExternalColumns[EpicName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EpicName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].ExternalColumns[TagJson]"
+                      dataType="nText"
+                      name="TagJson" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].ExternalColumns[sysCreatedAt]"
+                      dataType="dbTimeStamp"
+                      name="sysCreatedAt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].ExternalColumns[sysChangedAt]"
+                      dataType="dbTimeStamp"
+                      name="sysChangedAt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].ExternalColumns[sysCreatedBy]"
+                      dataType="i4"
+                      name="sysCreatedBy" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output].ExternalColumns[sysChangedBy]"
+                      dataType="i4"
+                      name="sysChangedBy" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Error Output].Columns[DimEpicKey]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Error Output].Columns[DimEpicKey]"
+                      name="DimEpicKey" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Error Output].Columns[EpicName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Error Output].Columns[EpicName]"
+                      name="EpicName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Error Output].Columns[TagJson]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Error Output].Columns[TagJson]"
+                      name="TagJson" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Error Output].Columns[sysCreatedAt]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Error Output].Columns[sysCreatedAt]"
+                      name="sysCreatedAt" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Error Output].Columns[sysChangedAt]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Error Output].Columns[sysChangedAt]"
+                      name="sysChangedAt" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Error Output].Columns[sysCreatedBy]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Error Output].Columns[sysCreatedBy]"
+                      name="sysCreatedBy" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Error Output].Columns[sysChangedBy]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Error Output].Columns[sysChangedBy]"
+                      name="sysChangedBy" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task 1\Destination - test2_csv.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task 1\Source - DimEpic.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[OLE DB Source Output1]"
+              endId="Package\Data Flow Task 1\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="160,41.6"
+          Id="Package\Data Flow Task 1"
+          TopLeft="103.21428737835,33.0294121507955" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\Data Flow Task 1\Destination - test2_csv"
+          TopLeft="5.50000000000001,107.1" />
+        <NodeLayout
+          Size="159.2,41.6"
+          Id="Package\Data Flow Task 1\Source - DimEpic"
+          TopLeft="18.7,5.49999999999995" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[OLE DB Source Output]"
+          TopLeft="98.3,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Data Flow Task 1\OLE DB Source"
+          TopLeft="268.000004564013,27.5294121507955" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Data Flow Task 1\Flat File Destination"
+          TopLeft="265.142861658213,130.305884180432" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[OLE DB Source Output1]"
+          TopLeft="346.771433111113,69.1294121507955">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.1764720296365"
+              Start="0,0"
+              End="0,53.6764720296365">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.6764720296365" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task 1\Source - DimEpic">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task 1\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

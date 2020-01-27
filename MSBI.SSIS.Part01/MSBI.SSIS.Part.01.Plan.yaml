@@ -1,0 +1,37 @@
+---
+topics:
+- topic: About this sub course
+  subtopics:
+   - subtopic: Goals and approach
+   - subtopic: Expected Result
+   - subtopic: Tools and Technologies
+- topic: Data Warehousing Concepts
+  subtopics:
+   - subtopic: What is Data Warehousing?
+   - subtopic: Conventional data warehouses
+   - subtopic: Conventional data warehouse Systems
+   - subtopic: Modern data warehouse
+   - subtopic: Modern Data Warehouse Systems
+- topic: Installation  of tool for Visual Studio
+  subtopics:
+   - subtopic: SSIS
+   - subtopic: SSRS
+   - subtopic: SSAS
+- topic: ETL
+  subtopics:
+   - subtopic: ETL Tools
+   - subtopic: SSIS architecture
+- topic: Creating SSIS Packages
+  subtopics:
+   - subtopic: Using the SQL Server Import and Export Wizard
+   - subtopic: Developing SSIS Packages in SSDT
+   - subtopic: Introducing Control Flow, Data Flow, and Connection Managers
+- topic: UN Statistic Project
+  subtopics:
+   - subtopic: Review
+   - subtopic: First step
+   - subtopic: Solution Diagram
+   - subtopic: Data transformation workflow
+   - subtopic: Dimensional Model
+   - subtopic: Homework
+---
