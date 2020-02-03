@@ -12,15 +12,15 @@ topics:
    - subtopic: Conventional data warehouse Systems
    - subtopic: Modern data warehouse
    - subtopic: Modern Data Warehouse Systems
-- topic: Installation  of tool for Visual Studio
-  subtopics:
-   - subtopic: SSIS
-   - subtopic: SSRS
-   - subtopic: SSAS
 - topic: ETL
   subtopics:
    - subtopic: ETL Tools
    - subtopic: SSIS architecture
+- topic: Installation of tools for Visual Studio
+  subtopics:
+   - subtopic: SSIS
+   - subtopic: SSRS
+   - subtopic: SSAS   
 - topic: Creating SSIS Packages
   subtopics:
    - subtopic: Using the SQL Server Import and Export Wizard
@@ -28,7 +28,7 @@ topics:
    - subtopic: Introducing Control Flow, Data Flow, and Connection Managers
 - topic: UN Statistic Project
   subtopics:
-   - subtopic: Review
+   - subtopic: Goal
    - subtopic: First step
    - subtopic: Solution Diagram
    - subtopic: Data transformation workflow
