@@ -1,0 +1,24 @@
+---
+topics:
+  - topic: UN Statistic Project
+    subtopics:
+    - subtopic: WorkItem workflow
+    - subtopic: DWH structure - staging
+    - subtopic: SSIS Load from files to staging area
+    GitHub:
+      - Create a new brach
+      - Create a Pull Request
+  - topic: Designing and Implementing Control Flow
+    subtopics:
+    - subtopic: Transformations
+      list:
+        - union all
+        - sort
+        - merge join
+        - sources
+        - destination    
+---
+
+
+
+

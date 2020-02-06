@@ -1,0 +1,30 @@
+---
+topics:
+- topic: Connection Managers
+  subtopics:
+   - subtopic: Package-scoped connection managers
+   - subtopic: Project-scoped connection managers
+   - subtopic: 32-Bit and 64-Bit Data Providers
+- topic: Designing and Implementing Control Flow
+  subtopics:
+   - subtopic: Control Flow Tasks
+   - subtopic: Containers
+   - subtopic: Precedence Constraints
+- topic: Designing and Implementing Data Flow
+  subtopics:
+   - subtopic: Creating a Data Flow Task
+   - subtopic: Defining Data Flow Source Adapters
+   - subtopic: Defining Data Flow Destination Adapters
+   - subtopic: SSIS Data Types
+- topic: UN Statistic Project
+  subtopics:
+   - subtopic: DWH structure
+   - subtopic: Azure DevOps Sprint, WorkItem - User Story, Tasks
+   - subtopic: WorkItem workflow
+   - subtopic: Load from file to staging
+   - subtopic: Homework
+---
+
+
+
+

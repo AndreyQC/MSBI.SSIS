@@ -1,0 +1,16 @@
+---
+topics:
+- topic: UN Statistic Project
+  subtopics:
+   - subtopic: Create a Project and Repo
+   - subtopic: Create DB and SSIS project
+   - subtopic: Solution Diagram
+   - subtopic: Data transformation workflow
+   - subtopic: Dimensional Model
+   - subtopic: Homework
+- topic: Create SSIS  Project with different Deployment Model
+  subtopics:
+   - subtopic: Project deployment model
+   - subtopic: Package deployment model
+   - subtopic: Different version of  SQL
+---
